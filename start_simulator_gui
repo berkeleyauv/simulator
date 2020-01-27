@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker exec urab-sim Xvfb :1 -screen 0 1600x1200x16 & > /dev/null
+docker exec urab-sim x11vnc -display :1 & > /dev/null
+
+echo Sent commands to set up the VNC server.
+echo
