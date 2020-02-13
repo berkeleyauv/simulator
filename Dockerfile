@@ -1,5 +1,6 @@
 FROM ros:melodic-ros-core
-# place here your application's setup specifics
+
+# Install VNC and UUV Simulator packages
 RUN apt-get update && apt update \
 	&& apt-get install x11vnc -y \
 	&& apt install xvfb -y \
@@ -7,20 +8,25 @@ RUN apt-get update && apt update \
 	&& apt-get install python-catkin-tools -y
 
 # Create catkin workspace
-# TODO: pull the ur@b simulator GitHub repo in this
-RUN /bin/bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash >> ~/.bashrc \
+RUN /bin/bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash \
 	&& mkdir -p "$HOME/catkin_ws/src" \
 	&& cd "$HOME/catkin_ws/src" \
 	&& catkin_init_workspace \
 	&& cd "$HOME/catkin_ws" \
 	&& catkin build'
 
-ENV DISPLAY :1.0
-ENV GAZEBO_MODEL_PATH /root/catkin_ws/src/urab_sim/vortex_descriptions/world_models:
+# Put custom world and model descriptions in the container
+ADD ./descriptions /root/catkin_ws/src
 
-# Keep the docker running and source relevant files on docker run
+# Build the custom world and model descriptions
+RUN cd $HOME/catkin_ws/src \
+	&& catkin build \
+	&& echo source /opt/ros/$ROS_DISTRO/setup.bash >> ~/.bashrc \
+	&& echo source ~/catkin_ws/devel/setup.bash >> ~/.bashrc
+
+# Set some environment variables
+ENV DISPLAY :0.0
+ENV GAZEBO_MODEL_PATH /root/catkin_ws/src/vortex_descriptions/world_models:
+
+# Source relevant files and keep the docker running after "docker run ..." is run
 CMD /bin/bash -c "source /root/.bashrc && tail -f /dev/null"
-
-# You need to do the below to do roslaunch
-# source ~/catkin_ws/devel/setup.bash >> ~/.bashrc'
-
