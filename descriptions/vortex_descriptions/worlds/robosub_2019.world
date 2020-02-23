@@ -70,7 +70,7 @@
     <include>
       <name>gate_side_a</name>
       <pose>12.4 -23.6 -0.9 0 0 -0.9</pose>
-      <uri>model://2018/gate</uri>
+      <uri>model://gate</uri>
     </include>
 
     <include>

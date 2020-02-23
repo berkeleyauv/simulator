@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo Launching robosub_world...
-echo Make sure you run ./start_vnc before this.
-
-# source ~/.bashrc gives makes roslaunch not found, so sourcing files directly is a workaround
-docker exec urab-sim bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash \
-                                && source ~/catkin_ws/devel/setup.bash \
-                                && roslaunch vortex_descriptions robosub_world.launch'

@@ -12,3 +12,6 @@ __pycache__/
 
 # C extensions
 *.so
+
+# Artifact from adding repo folder to a catkin workspace in the docker
+CMakeLists.txt
