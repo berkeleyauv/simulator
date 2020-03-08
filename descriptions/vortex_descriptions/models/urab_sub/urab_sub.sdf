@@ -9,9 +9,15 @@
     <link name='chasis'>
       <pose>0 0 0 0 1.5707 0</pose>
       <visual name='chasis_vis'>
-        <geometry>
-          <mesh><uri>file://urab_sub/urab_sub.stl</uri></mesh>
-        </geometry>
+	      <pose>0 0 0 0 0 1.5707</pose>      
+	      <geometry>
+		      <!-- Import the .sdf file from the mechanical team. This is rotated 90 degrees because Gazebo is weird -->
+		<mesh>
+			<uri>file://urab_sub/urab_sub.stl</uri>
+			<!-- 1/15 * (0.42 meters) = the simulated sub is 0.42 meters in width -->
+			<scale>0.028 0.028 0.028</scale>
+		</mesh>
+	</geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
