@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# Run me from inside a docker container
+# (or on Ubuntu...)
 echo Starting the VNC server...
 
-docker exec urab-sim Xvfb :0 -screen 0 1600x1200x16 & >> /dev/null
-docker exec urab-sim x11vnc -display :0 & >> /dev/null
+Xvfb :0 -screen 0 1600x1200x16 & >> /dev/null 
+x11vnc -display :0 & >> /dev/null
