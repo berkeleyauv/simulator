@@ -48,7 +48,7 @@ local> docker run -p 5900:5900 -d -v="/tmp/.ros/:/root/.ros/" --name=urab-sim ur
 ```
 
 #### Enter a bash session in the Docker container
-This will allow you to run commands in terminal as if you had Ubuntu, ROS, Gazebo, and all simulator dependencies installed. 
+This will allow you to run commands in terminal as if you had Ubuntu, ROS, Gazebo, and all simulator dependencies installed.
 
 ```
 local> docker exec -it urab-sim bash
@@ -84,11 +84,29 @@ Click Connect! The unencripted connection is fine ;)
 
 ## --Installation--
 
-Coming soon
+#### Pull this git repository
+```
+# cd to a folder where you want to keep this forever
+local> git clone https://github.com/berkeleyauv/simulator.git
+```
+
+#### Follow the setup instructions from the Dockerfile, but adjust accordingly
+#### to Ubuntu
+For the commands under the comment "Install VNC and UUV Simulator packages",
+run each command separately, using sudo.
+
+Each command also needs to be run separately for the rest of the Dockerfile.
+
+The very last line is unnecessary.
+
 
 ## --Starting the simulator--
 
-Coming soon
+Use `roslaunch` to start simulating a world. The syntax is `roslaunch <package name> <launch_filename.launch>`. Here's an example that launches the full RoboSub world:
+
+```
+container> roslaunch vortex_descriptions robosub_world.launch
+```
 
 # Debugging
 See the "Simulator Progress" doc in the team Google Drive in the Software/Perception/ folder
@@ -109,4 +127,3 @@ See the "Simulator Progress" doc in the team Google Drive in the Software/Percep
     booktitle = {{OCEANS} 2016 {MTS}/{IEEE} Monterey}
 }
 ```
-
