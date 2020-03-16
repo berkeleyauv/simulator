@@ -11,7 +11,7 @@
   <world name="empty_underwater">
     <gui>
       <camera name="user">
-        <pose>6.2 -27.4 -1.9 0 0 0.63</pose>
+        <pose>6.2 -27.4 -1.7 0 0.18 0.63</pose>
       </camera>
     </gui> (edited)
     <physics name="default_physics" default="true" type="ode">
@@ -64,12 +64,13 @@
     <!-- Bounding box with sea surface -->
 
     <include>
-      <name>gate_side_a</name>
-      <pose>12.4 -23.6 -0.9 0 0 -0.9</pose>
-      <uri>model://gate</uri>
+      <name>path_marker1_side_a</name>
+      <pose>14.2 -22.6 -5.0 0 0 -1.13</pose>
+      <uri>model://2018/path_markers</uri>
     </include>
 
     <!-- The robot. -->
+
     <include>
       <name>urab_sub</name>
       <pose>12.4 -23.6 -1.5 0 0 0</pose>

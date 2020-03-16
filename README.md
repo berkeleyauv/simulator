@@ -91,7 +91,16 @@ local> git clone https://github.com/berkeleyauv/simulator.git
 ```
 
 #### Follow the setup instructions from the Dockerfile, but adjust accordingly
-Coming soon
+#### to Ubuntu
+For the commands under the comment "Install VNC and UUV Simulator packages",
+run each command separately, using sudo.
+
+Each command also needs to be run separately for the rest of the Dockerfile.
+
+The very last line is unnecessary.
+
+It may be necessary to set the GAZEBO_MODEL_PATH environment variable each time
+you start your computer.
 
 
 ## --Starting the simulator--
