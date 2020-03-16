@@ -99,6 +99,8 @@ Each command also needs to be run separately for the rest of the Dockerfile.
 
 The very last line is unnecessary.
 
+It may be necessary to set the GAZEBO_MODEL_PATH environment variable each time
+you start your computer.
 
 ## --Starting the simulator--
 
