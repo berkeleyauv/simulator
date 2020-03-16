@@ -102,6 +102,7 @@ The very last line is unnecessary.
 It may be necessary to set the GAZEBO_MODEL_PATH environment variable each time
 you start your computer.
 
+
 ## --Starting the simulator--
 
 Use `roslaunch` to start simulating a world. The syntax is `roslaunch <package name> <launch_filename.launch>`. Here's an example that launches the full RoboSub world:
