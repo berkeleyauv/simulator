@@ -11,7 +11,7 @@
   <world name="empty_underwater">
     <gui>
       <camera name="user">
-        <pose>6.2 -27.4 -1.9 0 0 0.63</pose>
+        <pose>6.2 -27.4 -1.7 0 0.18 0.63</pose>
       </camera>
     </gui> (edited)
     <physics name="default_physics" default="true" type="ode">
