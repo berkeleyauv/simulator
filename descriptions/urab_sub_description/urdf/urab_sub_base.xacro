@@ -52,11 +52,11 @@
   -->
 
   <!-- Parameters -->
-  <xacro:property name="namespace" value="manta"/>
-  <xacro:property name="visual_mesh_file" value="file://$(find urab_sub_description)/mesh/manta_shell.dae"/>
+  <xacro:property name="namespace" value="urab_sub"/>
+  <xacro:property name="visual_mesh_file" value="file://$(find urab_sub_description)/mesh/urab_sub_shell.dae"/>
 
 
-  <xacro:macro name="manta_base" params="namespace *gazebo inertial_reference_frame">
+  <xacro:macro name="urab_sub_base" params="namespace *gazebo inertial_reference_frame">
    <!-- Rigid body description of the base link -->
     <link name="${namespace}/base_link">
         <!--
@@ -85,7 +85,7 @@
           </geometry>
         </visual>
 
-        <!-- In manta_base i've made collision planes to minize the GPU load -->
+        <!-- In urab_sub_base i've made collision planes to minize the GPU load -->
     <collision>
       <origin xyz="0 0 ${0}" rpy="0 0 0"/>
       <geometry>
@@ -109,13 +109,13 @@
     all the thrusters of the robot. if you run your controller the model will then
     receive topics on all its thrusters. The robot will not move just by launching
     this file alone -->
-  <xacro:include filename="$(find urab_sub_description)/urdf/manta_actuators.xacro"/>
+  <xacro:include filename="$(find urab_sub_description)/urdf/urab_sub_actuators.xacro"/>
 
    <!-- Publishes -->
    <!-- ONLY NEED FOR SIMULATIONS (GAZEBO SPECIFIC) 
      This .xacro file has to run to be able to move the robot when controller
      commands have been sent to the thrusters-->
-  <xacro:include filename="$(find urab_sub_description)/urdf/manta_sensors.xacro"/>
+  <xacro:include filename="$(find urab_sub_description)/urdf/urab_sub_sensors.xacro"/>
 
   </xacro:macro>
 

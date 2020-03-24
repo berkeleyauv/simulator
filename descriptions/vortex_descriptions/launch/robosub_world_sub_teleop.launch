@@ -7,6 +7,6 @@
 
 <launch>
   <include file="$(find vortex_descriptions)/launch/robosub_world.launch"/>
-  <include file="$(find urab_sub_description)/launch/upload_manta.launch"/>
+  <include file="$(find urab_sub_description)/launch/upload_urab_sub.launch"/>
   <include file="$(find urab_sub_thruster_manager)/launch/thruster_manager.launch"/> 
 </launch>
