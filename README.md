@@ -47,10 +47,17 @@ Open the command line
 
 * Click on the bottom-left icon and open System Tools > LXTerminal
 
+Build the custom ROS packages
+
+```
+cd ~/catkin_ws/src
+catkin build
+```
+
 Use `roslaunch` to start simulating a world. The syntax is `roslaunch <package name> <launch_filename.launch>`. Here's an example that launches the full RoboSub world:
 
 ```
-roslaunch vortex_descriptions robosub_world.launch
+roslaunch vortex_descriptions robosub_world_sub.launch
 ```
 
 All changes to files in /root/catkin_ws/src are synced to the folder where you cloned the repo on your computer. 
