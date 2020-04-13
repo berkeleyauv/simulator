@@ -53,7 +53,7 @@
 
   <!-- Parameters -->
   <xacro:property name="namespace" value="urab_sub"/>
-  <xacro:property name="visual_mesh_file" value="file://$(find urab_sub_description)/mesh/urab_sub_shell.dae"/>
+  <xacro:property name="visual_mesh_file" value="file://$(find urab_sub_description)/mesh/urab_sub.stl"/>
 
 
   <xacro:macro name="urab_sub_base" params="namespace *gazebo inertial_reference_frame">
@@ -79,9 +79,10 @@
         <!-- Code in rexrov2_base.xacro if use the flag use_simplified_mesh -->
 
         <visual>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <origin xyz="-0.22 0 0" rpy="1.5707 0 1.5707"/>
           <geometry>
-            <mesh filename="${visual_mesh_file}" scale="1 1 1" />
+            <!-- 1/15 * base = the simulated urab sub is 0.42 meters in width -->
+            <mesh filename="${visual_mesh_file}" scale="0.028 0.028 0.028" />
           </geometry>
         </visual>
 
