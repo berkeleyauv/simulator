@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <!-- 
-     Written by Kristoffer Rakstad Solberg, Student
+     Base code written by Kristoffer Rakstad Solberg, Student
      Copyright (c) 2019 Manta AUV, Vortex NTNU.
      All rights reserved. -->
 
@@ -47,7 +47,7 @@
                     pose:
                         position: [0, -50, -10]
                 east:
-                    plane: [100, 0.1, 20]
+                    plane: [100, 0.1, 20]   
                     pose:
                         position: [0, 50, -10]
         </rosparam>
