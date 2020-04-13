@@ -14,7 +14,7 @@ run: ## Run container
 	#				can also be seen from directoyA on your computer.
 	#				aka the pwd one shares the git repo between the docker container and your computer
 	docker run -it --rm -p 6080:80 -v="/tmp/.ros/:/root/.ros/" \
-		-v=$$(pwd):/root/catkin_ws/src/ --name=${APP_NAME} 013d5b465757  #SUBSTITUTE WITH DOCKER IMAGE NAME
+		-v=$$(pwd):/root/catkin_ws/src/ --name=${APP_NAME} jonathanyang0127/berkeleyauvsimulator  #SUBSTITUTE WITH DOCKER IMAGE NAME
 
 clean: ## Remove a container, running or not
 	docker rm $(APP_NAME) -f
