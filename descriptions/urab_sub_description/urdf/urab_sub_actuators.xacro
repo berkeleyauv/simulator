@@ -18,6 +18,8 @@
     <rotorConstant> T200, 12V for a 2nd order curve fit: tau = gain * abs(x)*x -->
   <xacro:macro name="thruster_macro" 
     params="namespace thruster_id *origin">
+    <!-- Macro definition here: 
+    https://github.com/uuvsimulator/uuv_simulator/blob/5684de4827729f163f118cdc3a841011ef25ed8d/uuv_gazebo_plugins/uuv_gazebo_ros_plugins/urdf/thruster_snippets.xacro#L135 -->
     <xacro:thruster_module_first_order_basic_fcn_macro
       namespace="${namespace}"
       thruster_id="${thruster_id}"
@@ -41,6 +43,9 @@
       <xacro:insert_block name="origin"/>
     </xacro:thruster_module_first_order_basic_fcn_macro>
   </xacro:macro>
+
+<!-- Thrusters probably advertise to these topics:
+     https://github.com/uuvsimulator/uuv_simulator/blob/5684de4827729f163f118cdc3a841011ef25ed8d/uuv_gazebo_plugins/uuv_gazebo_ros_plugins/src/ThrusterROSPlugin.cc#L153-L168 -->
 
 <!-- Top thrusters --> 
 
