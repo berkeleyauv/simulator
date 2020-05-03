@@ -26,11 +26,11 @@
     Vehicle's parameters (remember to enter the model parameters below)
   -->
   <!-- Mass -->
-  <xacro:property name="mass" value="30.9"/>
+  <xacro:property name="mass" value="13"/>
   <!-- Describing the dimensions of the vehicle's bounding box: width, length, height -->
-  <xacro:property name="x_size" value="0.400"/>
-  <xacro:property name="y_size" value="0.400"/>
-  <xacro:property name="z_size" value="0.20066"/>
+  <xacro:property name="x_size" value="0.38449"/>
+  <xacro:property name="y_size" value="0.460"/>
+  <xacro:property name="z_size" value="0.286933"/>
   <!-- minion_usv_height is not really! It's just for run... We need first calculate the Fossen parameters -->
   <!-- Volume -->
   <xacro:property name="volume" value="0.0325"/>

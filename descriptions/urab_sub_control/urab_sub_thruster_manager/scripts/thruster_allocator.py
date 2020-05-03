@@ -39,6 +39,9 @@ class ThrusterAllocatorNode(ThrusterManager):
         self.last_update = rospy.Time.now()
 
         # Subscriber to the wrench to be applied on the UUV
+        # This package's setup makes it so that the sub should respond to input
+        # coming from here, but we should probably replace this whole package
+        # with the controls team's package
         self.input_sub = rospy.Subscriber('thruster_manager/input',
                                           Wrench, self.input_callback)
 
