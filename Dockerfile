@@ -24,8 +24,8 @@ RUN /bin/bash -c 'source /opt/ros/melodic/setup.bash \
 
 # Install ROS package dependencies
 RUN apt-get update \
-    && apt-get install ros-melodic-image-pipeline -y # For image_view \
-    && rosmake image_view
+    && apt-get install ros-melodic-image-pipeline ros-melodic-rqt -y # For image_view \
+    && rosmake image_view rqt
 
 # Add setup files to bashrc
 RUN echo source /opt/ros/melodic/setup.bash >> /root/.bashrc \
