@@ -54,3 +54,4 @@ cmake-build-debug
 .idea
 install
 log
+.vscode
