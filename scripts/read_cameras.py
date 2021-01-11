@@ -1,12 +1,16 @@
+#!/usr/bin/env python3
+
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import SingleThreadedExecutor
+from rclpy.qos import qos_profile_sensor_data
 import sys
 import threading
 import cv2
 import imageio
 import signal
 import datetime
+import random
 
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
@@ -16,9 +20,10 @@ class ImageListener(Node):
     from the simulator and converting it for OpenCV. """
 
     def __init__(self, topic_name, *args, write=False, **kwargs):
-        super().__init__('image_listener')
+        # ensure each node has a unique
+        super().__init__('image_listener_' + str(random.random())[2:])
         self.window = topic_name.split('/')[3]
-        self.sub = self.create_subscription(Image, topic_name, self.callback, 10)
+        self.sub = self.create_subscription(Image, topic_name, self.callback, qos_profile_sensor_data)
         self.images = []
         self.FPS = 30
         self.index = 0
@@ -66,9 +71,9 @@ def signal_handler(signal_num, frame):
 if __name__ == '__main__':
     rclpy.init(args=sys.argv)
     signal.signal(signal.SIGINT, signal_handler)
-    left_listener = ImageListener('/sub/sub/cameraleft/image_raw', write=True)
-    right_listener = ImageListener('/sub/sub/cameraright/image_raw', write=True)
-    listener = ImageListener('/sub/sub/camera/image_raw', write=True)
+    left_listener = ImageListener('/rexrov/cameraleft/image_raw', write=True)
+    right_listener = ImageListener('/rexrov/cameraright/image_raw', write=True)
+    listener = ImageListener('/rexrov/camera/image_raw', write=True)
     listeners = [left_listener, right_listener, listener]
     executor = SingleThreadedExecutor()
     for node in listeners:
