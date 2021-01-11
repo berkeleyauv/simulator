@@ -22,7 +22,7 @@ class ImageListener(Node):
     def __init__(self, topic_name, *args, write=False, **kwargs):
         # ensure each node has a unique
         super().__init__('image_listener_' + str(random.random())[2:])
-        self.window = topic_name.split('/')[3]
+        self.window = topic_name.split('/')[-2]
         self.sub = self.create_subscription(Image, topic_name, self.callback, qos_profile_sensor_data)
         self.images = []
         self.FPS = 30
