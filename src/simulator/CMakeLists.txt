@@ -32,7 +32,12 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(DIRECTORY launch worlds models
+install(PROGRAMS 
+  scripts/thruster_translate.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY launch worlds models 
   DESTINATION share/${PROJECT_NAME}
   PATTERN "*~"
   EXCLUDE)
