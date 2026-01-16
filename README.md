@@ -36,5 +36,5 @@ We must do this in order to avoid installing the entire Plankton package in [tar
 
 
 
-[!NOTE]
-We are currently working on switching to the PX4 SITL, which will remove the need for our own controllers and the translator node.
+> [!NOTE]
+> We are currently working on switching to the PX4 SITL, which will remove the need for our own controllers and the translator node.
