@@ -11,6 +11,14 @@
 
   <depend>gazebo_ros</depend>
   <depend>gazebo_msgs</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  <depend>xacro</depend>
+  <depend>ament_index_python</depend>
+  <depend>plankton_utils</depend>
+  <depend>uuv_thruster_manager</depend>
+  <depend>uuv_control_cascaded_pid</depend>
+  <depend>uuv_teleop</depend>
 
   <exec_depend>launch_xml</exec_depend>
 

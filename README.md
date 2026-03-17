@@ -25,6 +25,21 @@ Then, to launch the world in Gazebo
 
 `ros2 launch simulator robosub.launch`
 
+## One-command cmd_vel bring-up for Tardigrade
+
+To launch the world, spawn Tardigrade, start thrust allocation, start the
+cascaded PID control chain, and start keyboard teleop publishing to
+`/tardigrade/cmd_vel`:
+
+`ros2 launch simulator tardigrade_cmd_vel.launch.py`
+
+Useful launch options:
+
+- Use joystick teleop instead of keyboard:
+	`ros2 launch simulator tardigrade_cmd_vel.launch.py use_keyboard_teleop:=false use_joystick_teleop:=true joy_id:=0`
+- Reuse a saved TAM after first run:
+	`ros2 launch simulator tardigrade_cmd_vel.launch.py reset_tam:=false`
+
 ## Working with thrusters
 
 To use the thrusters on the AUV, you must run the thruster_translate node. This node

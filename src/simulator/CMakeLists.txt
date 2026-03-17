@@ -37,7 +37,7 @@ install(PROGRAMS
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch worlds models 
+install(DIRECTORY launch worlds models robots urdf meshes
   DESTINATION share/${PROJECT_NAME}
   PATTERN "*~"
   EXCLUDE)
