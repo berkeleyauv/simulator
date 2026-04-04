@@ -25,20 +25,20 @@ Then, to launch the world in Gazebo
 
 `ros2 launch simulator robosub.launch`
 
-## One-command cmd_vel bring-up for Tardigrade
+To launch world + tardigrade, use
 
-To launch the world, spawn Tardigrade, start thrust allocation, start the
-cascaded PID control chain, and start keyboard teleop publishing to
-`/tardigrade/cmd_vel`:
+`ros2 launch simulator tardigrade_singlefile.launch.py`
 
-`ros2 launch simulator tardigrade_cmd_vel.launch.py`
+## Controls
+`Accel` and `Twist` options are available for control, through `tardigrade/cmd_accel` and `tardigrade/cmd_vel` respectively. You may use `key_ctrl.py` for keyboard teleoperation to test things out.
 
-Useful launch options:
+To launch keyboard commands and tardigrade, launch two terminals:
 
-- Use joystick teleop instead of keyboard:
-	`ros2 launch simulator tardigrade_cmd_vel.launch.py use_keyboard_teleop:=false use_joystick_teleop:=true joy_id:=0`
-- Reuse a saved TAM after first run:
-	`ros2 launch simulator tardigrade_cmd_vel.launch.py reset_tam:=false`
+Terminal 1: Gazebo + Tardigrade model:  
+`ros2 launch simulator tardigrade_singlefile.launch.py`
+
+Terminal 2: keyboard teleoperation:  
+`ros2 run simulator key_ctrl.py` (defaults to cmd_vel) or `ros2 run simulator key_ctrl.py --ros-args -p interface:=cmd_accel` to use Accel instead of Twist messages.
 
 ## Working with thrusters
 
