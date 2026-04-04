@@ -11,6 +11,11 @@
 
   <depend>gazebo_ros</depend>
   <depend>gazebo_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>rclpy</depend>
+  <depend>uuv_control_cascaded_pid</depend>
+  <depend>uuv_thruster_manager</depend>
+  <depend>plankton_utils</depend>
 
   <exec_depend>launch_xml</exec_depend>
 

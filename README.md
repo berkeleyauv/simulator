@@ -25,6 +25,21 @@ Then, to launch the world in Gazebo
 
 `ros2 launch simulator robosub.launch`
 
+To launch world + tardigrade, use
+
+`ros2 launch simulator tardigrade_singlefile.launch.py`
+
+## Controls
+`Accel` and `Twist` options are available for control, through `tardigrade/cmd_accel` and `tardigrade/cmd_vel` respectively. You may use `key_ctrl.py` for keyboard teleoperation to test things out.
+
+To launch keyboard commands and tardigrade, launch two terminals:
+
+Terminal 1: Gazebo + Tardigrade model:  
+`ros2 launch simulator tardigrade_singlefile.launch.py`
+
+Terminal 2: keyboard teleoperation:  
+`ros2 run simulator key_ctrl.py` (defaults to cmd_vel) or `ros2 run simulator key_ctrl.py --ros-args -p interface:=cmd_accel` to use Accel instead of Twist messages.
+
 ## Working with thrusters
 
 To use the thrusters on the AUV, you must run the thruster_translate node. This node
