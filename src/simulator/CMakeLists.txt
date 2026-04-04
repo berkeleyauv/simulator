@@ -33,11 +33,12 @@ if(BUILD_TESTING)
 endif()
 
 install(PROGRAMS 
+  scripts/key_ctrl.py
   scripts/thruster_translate.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch worlds models robots urdf meshes
+install(DIRECTORY launch worlds models robots config
   DESTINATION share/${PROJECT_NAME}
   PATTERN "*~"
   EXCLUDE)
